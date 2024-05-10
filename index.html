@@ -5,10 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <div class="container">
+    <h2>What's up, 
+      <input type="text" id="username">
+    </h2>
+
+    <div class="todoList__title">Create a todo</div>
+    <form class="form" id="todoForm">
+      <div class="form__input-block">
+        <label class="form__label">What's on your todo list?</label>
+        <input class="form__input" type="text" name="taskText" placeholder="e.g. get a milk" id="taskInput">
+        <label >
+          <input type="radio" name="category" id="business" value="business">
+          business
+        </label>
+        <label >
+          <input type="radio" name="category" id="personal" value="personal">
+          personal
+        </label>
+      </div>
+      
+      <button type="submit" class="form__button" id="buttonAdd">Add task</button>
+    </form>
+  </div>
   
+  <div class="container">
+    <h3>Tasks</h3>
+    <div class="list">
+      <div class="list__item todoList-ul">
+        <div class="list__text">go to school</div>
+      </div>
+    </div>
+  </div>
+  <script src="todoList.js" ></script>
 </body>
 </html>
