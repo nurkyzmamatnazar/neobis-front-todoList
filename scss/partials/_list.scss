@@ -1,0 +1,30 @@
+.list {
+  list-style: none;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #fff;
+    margin-bottom: 1rem;
+    border: 0.1rem solid #cecece;
+    border-radius: 1rem;
+  }
+  &__text {
+    margin-left: 0.7rem;
+    border: none;
+  }
+  &__btn {
+    font-size: 1rem;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    border-radius: 0.4rem;
+    margin-left: 0.3rem;
+    &_edit {
+      background: #df1581;
+    }
+    &_delete {
+      background: #FF4500;
+    }
+  }
+}
