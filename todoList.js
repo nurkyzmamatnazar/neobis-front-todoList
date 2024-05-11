@@ -67,6 +67,7 @@ const showTasks = () => {
     listText.classList.add('list__text');
     listText.type = 'text';
     listText.value = `${task.taskText}`;
+    listText.setAttribute('readonly', 'readonly');
 
     const btns = document.createElement('div');
     btns.classList.add('list__btns');
@@ -102,6 +103,30 @@ const showTasks = () => {
       showTasks();
     });
     
+    editBtn.addEventListener('click', () => {
+      const listText = document.querySelector('.list__text');
+      listText.removeAttribute('readonly');
+      listText.focus();
+      
+      const saveBtn = document.createElement('button');
+      saveBtn.classList.add('list__btn', 'list__btn_delete');
+      saveBtn.innerText = 'Save';
+
+      btns.prepend(saveBtn);
+
+      listText.addEventListener('', (e) => {
+        listText.setAttribute('readonly', 'readonly');
+        
+        saveBtn.addEventListener('click', () => {
+          task.taskText = e.target.value;
+          console.log(listText.value);
+          
+          localStorage.setItem('tasks', JSON.stringify(tasks));
+          showTasks();
+        });
+        
+      })
+    });
 
     delBtn.addEventListener('click', () => {
       tasks = tasks.filter(t => t != task);

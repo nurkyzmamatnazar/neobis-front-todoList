@@ -1,6 +1,7 @@
 .form {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   &__input-block {
     display: flex;
     flex-direction: column;
@@ -13,12 +14,13 @@
     margin-bottom: 3px;
   }
   &__input {
-      width: 300px;
-      padding: 15px 0 10px 10px;
+      width: 42.7em;
+      padding: 1em 0 1em 1em;
       border: 1px solid #cecece;
       background: #fff;
       border-radius: 8px;
       margin-right: 20px;
+      margin-bottom: 1em;
       box-shadow: 0 0 2px 2px #ececec;
       &:hover {
         border: 1px solid #8B0000;
@@ -26,12 +28,18 @@
         transition: 0.3s;
       }
   }
+  &__adding {
+    width: 42.7em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__button {
     border: none;
     color: #fff;
     background: #B22222;
     border-radius: 10px;
-    padding: 7px 20px;
+    padding: 1em 8em;
     font-size: 17px;
     &:hover {
       background: #8B0000;
