@@ -25,6 +25,12 @@ body {
   clear: both;
 }
 
+.username {
+  border: none;
+  background: none;
+  font-weight: 600;
+}
+
 .todoList__title {
   color: #B22222;
   text-transform: uppercase;

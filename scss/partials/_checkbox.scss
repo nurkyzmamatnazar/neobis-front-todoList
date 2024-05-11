@@ -1,0 +1,110 @@
+:root {
+	--hue: 223;
+	--trans-dur: 0.3s;
+	--trans-timing: cubic-bezier(0.65,0,0.35,1);
+}
+
+.form__checkbox-block {
+  display: flex;
+  flex-direction: row;
+	max-width: 20em;
+	position: relative;
+	width: calc(100% - 3em);
+}
+
+.form__checkbox-label,
+input[type="radio"] {
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+.form__checkbox-label {
+	background-color: hsla(0,0%,100%,0);
+	border-radius: 0.75em;
+	display: flex;
+	align-items: center;
+  padding: 1em 1.5em;
+	transition: background-color var(--trans-dur);
+}
+input[type="radio"] {
+	background-color: #fff;
+	border-radius: 50%;
+	box-shadow:
+		0 0 0 0.0625em hsl(var(--hue),90%,80%),
+		0 0.125em 0.125em 0.0625em hsla(var(--hue),90%,10%,0.3);
+	flex-shrink: 0;
+	margin-inline-end: 1em;
+	outline: transparent;
+	position: relative;
+	width: 1.5em;
+	height: 1.5em;
+	transition:
+		background-color var(--trans-dur),
+		box-shadow var(--trans-dur);
+	-webkit-appearance: none;
+	appearance: none;
+}
+input[type="radio"]:before,
+input[type="radio"]:after {
+	border-radius: 50%;
+	content: "";
+	display: block;
+	position: absolute;
+	transform: scale(0);
+	transition: transform var(--trans-dur) var(--trans-timing);
+}
+input[type="radio"]:before {
+	box-shadow:
+		0 0 0 0.5em #b22222 inset,
+		0 0 0 0.0625em #b22222;
+	top: -0.0625em;
+	left: -0.0625em;
+	width: calc(100% + 0.125em);
+	height: calc(100% + 0.125em);
+}
+input[type="radio"]:after {
+	background-color: #fff;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+}
+input[type="radio"]:checked:before,
+input[type="radio"]:checked:after {
+	transform: scale(1);
+}
+.form__checkbox-label:has(input[type="radio"]:checked),
+.form__checkbox-label:has(input[type="radio"]:not(:checked)):hover {
+	background-color: #fff;
+}
+.selection {
+	border-radius: 0.75em;
+	box-shadow: 0 0 0 0.125em #b22222 inset;
+	display: none;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 48%;
+	height: 3.7em;
+	transition: transform var(--trans-dur) var(--trans-timing);
+}
+.form__checkbox-label:has(input[type="radio"]:checked)  ~ .selection {
+	animation: fade-in var(--trans-dur) var(--trans-timing);
+	display: inherit;
+}
+.form__checkbox-label:nth-of-type(2):has(input[type="radio"]:checked) ~ .selection {
+	transform: translateX(100%);
+}
+
+.form__checkbox_category {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+/* Animations */
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}

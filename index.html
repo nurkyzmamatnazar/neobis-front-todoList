@@ -15,33 +15,52 @@
 
   <div class="container">
     <h2>What's up, 
-      <input type="text" id="username">
+      <input class="username" type="text" id="username">
     </h2>
 
     <div class="todoList__title">Create a todo</div>
-    <form class="form" id="todoForm">
-      <div class="form__input-block">
-        <label class="form__label">What's on your todo list?</label>
-        <input class="form__input" type="text" name="taskText" placeholder="e.g. get a milk" id="taskInput">
-        <label >
-          <input type="radio" name="category" id="business" value="business">
-          business
-        </label>
-        <label >
-          <input type="radio" name="category" id="personal" value="personal">
-          personal
-        </label>
-      </div>
-      
-      <button type="submit" class="form__button" id="buttonAdd">Add task</button>
-    </form>
-  </div>
+      <form class="form" id="todoForm">
+        <div class="form__input-block">
+          <label class="form__label">What's on your todo list?</label>
+          <input class="form__input" type="text" name="taskText" placeholder="e.g. get a milk" id="taskInput">
+        </div>
+
+        <div class="form__adding">
+          <div class="form__checkbox-block">
+            <label class="form__checkbox-label">
+              <input 
+              class="form__checkbox-input" 
+              type="radio" 
+              name="category" 
+              id="business" 
+              value="business"
+              checked
+              >
+              <span class="form__checkbox_category">business</span>
+            </label>
+            <label class="form__checkbox-label">
+              <input 
+              class="form__checkbox-input" 
+              type="radio" 
+              name="category" 
+              id="personal" 
+              value="personal"
+              checked
+              >
+              <span class="form__checkbox_category">personal</span>
+            </label>
+            <div class="selection"></div>
+          </div>
+  
+          <button class="form__button" type="submit" id="buttonAdd">Add task</button>
+        </div>
+      </form>
+    </div>
   
   <div class="container">
     <h3>Tasks</h3>
     <div class="list">
-      <div class="list__item todoList-ul">
-        <div class="list__text">go to school</div>
+      <div class="list__item">
       </div>
     </div>
   </div>

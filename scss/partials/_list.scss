@@ -1,5 +1,4 @@
 .list {
-  list-style: none;
   &__item {
     display: flex;
     justify-content: space-between;
@@ -12,6 +11,10 @@
   &__text {
     margin-left: 0.7rem;
     border: none;
+    &:active, :hover, :focus {
+      outline: 0;
+      outline-offset: 0;
+    }
   }
   &__btn {
     font-size: 1rem;
