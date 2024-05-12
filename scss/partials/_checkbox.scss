@@ -25,7 +25,9 @@ input[type="radio"] {
   padding: 1em 1.5em;
 	transition: background-color var(--trans-dur);
 }
-input[type="radio"] {
+
+input[type="radio"],
+input[type="checkbox"] {
 	background-color: #fff;
 	border-radius: 50%;
 	box-shadow:
@@ -43,8 +45,11 @@ input[type="radio"] {
 	-webkit-appearance: none;
 	appearance: none;
 }
+
 input[type="radio"]:before,
-input[type="radio"]:after {
+input[type="radio"]:after,
+input[type="checkbox"]:before,
+input[type="checkbox"]:after {
 	border-radius: 50%;
 	content: "";
 	display: block;
@@ -52,16 +57,28 @@ input[type="radio"]:after {
 	transform: scale(0);
 	transition: transform var(--trans-dur) var(--trans-timing);
 }
-input[type="radio"]:before {
+input[type="radio"]:before,
+input[type="checkbox"]:before {
 	box-shadow:
-		0 0 0 0.5em #b22222 inset,
-		0 0 0 0.0625em #b22222;
-	top: -0.0625em;
+		0 0 0 0.5em #2224b2 inset,
+		0 0 0 0.0625em #2224b2;
+	top: -0.0525em;
 	left: -0.0625em;
 	width: calc(100% + 0.125em);
 	height: calc(100% + 0.125em);
 }
-input[type="radio"]:after {
+input#business:before {
+	box-shadow:
+		0 0 0 0.5em #14166e inset,
+		0 0 0 0.0625em #14166e;
+}
+input#personal:before {
+	box-shadow:
+		0 0 0 0.5em #1c8750 inset,
+		0 0 0 0.0625em #1c8750;
+}
+input[type="radio"]:after,
+input[type="checkbox"]:after {
 	background-color: #fff;
 	top: 25%;
 	left: 25%;
@@ -69,7 +86,9 @@ input[type="radio"]:after {
 	height: 50%;
 }
 input[type="radio"]:checked:before,
-input[type="radio"]:checked:after {
+input[type="radio"]:checked:after,
+input[type="checkbox"]:checked:before,
+input[type="checkbox"]:checked:after {
 	transform: scale(1);
 }
 .form__checkbox-label:has(input[type="radio"]:checked),
@@ -78,7 +97,7 @@ input[type="radio"]:checked:after {
 }
 .selection {
 	border-radius: 0.75em;
-	box-shadow: 0 0 0 0.125em #b22222 inset;
+	box-shadow: 0 0 0 0.125em #14166e inset;
 	display: none;
 	pointer-events: none;
 	position: absolute;
@@ -94,6 +113,7 @@ input[type="radio"]:checked:after {
 }
 .form__checkbox-label:nth-of-type(2):has(input[type="radio"]:checked) ~ .selection {
 	transform: translateX(100%);
+	box-shadow: 0 0 0 0.125em #1c8750 inset;
 }
 
 .form__checkbox_category {
@@ -108,3 +128,4 @@ input[type="radio"]:checked:after {
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
+
