@@ -17,11 +17,6 @@ newTodoForm.addEventListener('submit', e => {
     return;
   }
 
-  // if (e.target.category.value === '') {
-  //   alert('Please choose a category');
-  //   return;
-  // }
-
   const task = {
     taskText: e.target.elements.taskText.value,
     category: e.target.elements.category.value,

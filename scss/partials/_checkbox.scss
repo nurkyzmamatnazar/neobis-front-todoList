@@ -37,8 +37,8 @@ input[type="checkbox"] {
 	margin-inline-end: 1em;
 	outline: transparent;
 	position: relative;
-	width: 1.5em;
-	height: 1.5em;
+	width: 1.2em;
+	height: 1.2em;
 	transition:
 		background-color var(--trans-dur),
 		box-shadow var(--trans-dur);
@@ -80,8 +80,8 @@ input#personal:before {
 input[type="radio"]:after,
 input[type="checkbox"]:after {
 	background-color: #fff;
-	top: 25%;
-	left: 25%;
+	top: 24%;
+	left: 26%;
 	width: 50%;
 	height: 50%;
 }
@@ -104,7 +104,7 @@ input[type="checkbox"]:checked:after {
 	top: 0;
 	left: 0;
 	width: 48%;
-	height: 3.7em;
+	height: 3.5em;
 	transition: transform var(--trans-dur) var(--trans-timing);
 }
 .form__checkbox-label:has(input[type="radio"]:checked)  ~ .selection {
@@ -112,7 +112,7 @@ input[type="checkbox"]:checked:after {
 	display: inherit;
 }
 .form__checkbox-label:nth-of-type(2):has(input[type="radio"]:checked) ~ .selection {
-	transform: translateX(100%);
+	transform: translateX(95%);
 	box-shadow: 0 0 0 0.125em #1c8750 inset;
 }
 

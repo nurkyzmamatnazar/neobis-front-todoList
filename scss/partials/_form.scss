@@ -27,6 +27,9 @@
         background:#fff;
         transition: 0.3s;
       }
+      &:focus {
+        outline: none;
+      }
   }
   &__adding {
     width: 42.7em;

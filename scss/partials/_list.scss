@@ -19,12 +19,13 @@
     align-self: center;
     border: none;
     &:active {
-      outline: 0;
+      outline: none;
       outline-offset: 0;
-      border: 2px solid red;
     }
     &:focus {
-      border: 2px solid red;
+      border: 1px solid rgb(128, 20, 20);
+      border-radius: 0.3em;
+      outline: none;
     }
   }
   &__btn {
