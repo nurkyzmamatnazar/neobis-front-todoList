@@ -1,11 +1,8 @@
-console.log('scripts working');
-
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 const nameInput = document.getElementById('username');
 const newTodoForm = document.getElementById('todoForm');
 
 const username = localStorage.getItem('username') || '';
-
 nameInput.value = username;
 
 nameInput.addEventListener('change', e => {
@@ -20,10 +17,10 @@ newTodoForm.addEventListener('submit', e => {
     return;
   }
 
-  if (e.target.category.value === '') {
-    alert('Please choose a category');
-    return;
-  }
+  // if (e.target.category.value === '') {
+  //   alert('Please choose a category');
+  //   return;
+  // }
 
   const task = {
     taskText: e.target.elements.taskText.value,
@@ -32,7 +29,7 @@ newTodoForm.addEventListener('submit', e => {
   };
   tasks.push(task);
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  // e.target.reset();
+  e.target.reset();
 
   showTasks();
 });
@@ -54,10 +51,10 @@ const showTasks = () => {
     checkbox.checked = task.done;
 
   
-    if (tasks.category === 'business') {
-      span.classList.add('business');
-    } else {
-      span.classList.add('personal');
+    if (task.category === 'business') {
+      checkbox.id = 'business';
+    } else if (task.category === 'personal') {
+      checkbox.id = 'personal';
     }
   
     const listTextBlock = document.createElement('div');
@@ -86,13 +83,9 @@ const showTasks = () => {
     item.append(listTextBlock, btns);
     list.append(item);
 
-
-    if (task.done) {
-      item.classList.add('done');
-    }
-
     checkbox.addEventListener('click', e => {
       task.done = e.target.checked;
+
       localStorage.setItem('tasks', JSON.stringify(tasks));
 
       if (task.done) {
@@ -107,25 +100,15 @@ const showTasks = () => {
       const listText = document.querySelector('.list__text');
       listText.removeAttribute('readonly');
       listText.focus();
-      
-      const saveBtn = document.createElement('button');
-      saveBtn.classList.add('list__btn', 'list__btn_delete');
-      saveBtn.innerText = 'Save';
 
-      btns.prepend(saveBtn);
-
-      listText.addEventListener('', (e) => {
+      listText.addEventListener('blur', (e) => {
         listText.setAttribute('readonly', 'readonly');
-        
-        saveBtn.addEventListener('click', () => {
-          task.taskText = e.target.value;
-          console.log(listText.value);
+        task.taskText = e.target.value;
+        console.log(listText.value);
           
-          localStorage.setItem('tasks', JSON.stringify(tasks));
-          showTasks();
-        });
-        
-      })
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        showTasks();
+      });
     });
 
     delBtn.addEventListener('click', () => {

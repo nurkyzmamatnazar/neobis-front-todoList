@@ -14,42 +14,42 @@
 <body>
 
   <div class="container">
-    <h2>What's up, 
-      <input class="username" type="text" id="username">
+    <h2>What's up,
+      <input class="username" type="text" id="username" required>
     </h2>
 
     <div class="todoList__title">Create a todo</div>
       <form class="form" id="todoForm">
         <div class="form__input-block">
           <label class="form__label">What's on your todo list?</label>
-          <input class="form__input" type="text" name="taskText" placeholder="e.g. get a milk" id="taskInput">
+          <input class="form__input" type="text" name="taskText" placeholder="e.g. get a milk" id="taskInput" required>
         </div>
 
         <div class="form__adding">
           <div class="form__checkbox-block">
-            <label class="form__checkbox-label">
+            <label class="form__checkbox-label form__checkbox-label_business">
               <input 
-              class="form__checkbox-input" 
+              class="form__checkbox-input form__checkbox-input_business" 
               type="radio" 
               name="category" 
               id="business" 
               value="business"
               checked
               >
-              <span class="form__checkbox_category">business</span>
+              <span class="form__checkbox_category form__checkbox_category-business">business</span>
             </label>
-            <label class="form__checkbox-label">
+            <label class="form__checkbox-label form__checkbox-label_personal">
               <input 
-              class="form__checkbox-input" 
+              class="form__checkbox-input form__checkbox-input_personal" 
               type="radio" 
               name="category" 
               id="personal" 
               value="personal"
               checked
               >
-              <span class="form__checkbox_category">personal</span>
+              <span class="form__checkbox_category form__checkbox_category-personal">personal</span>
             </label>
-            <div class="selection"></div>
+            <div class="selection selection"></div>
           </div>
   
           <button class="form__button" type="submit" id="buttonAdd">Add task</button>

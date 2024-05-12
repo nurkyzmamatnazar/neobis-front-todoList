@@ -8,12 +8,23 @@
     border: 0.1rem solid #cecece;
     border-radius: 1rem;
   }
-  &__text {
+  &__text-block {
+    display: flex;
     margin-left: 0.7rem;
     border: none;
-    &:active, :hover, :focus {
+  }
+  &__text {
+    width: 28em;
+    padding: 0.3em 0;
+    align-self: center;
+    border: none;
+    &:active {
       outline: 0;
       outline-offset: 0;
+      border: 2px solid red;
+    }
+    &:focus {
+      border: 2px solid red;
     }
   }
   &__btn {
@@ -24,10 +35,10 @@
     border-radius: 0.4rem;
     margin-left: 0.3rem;
     &_edit {
-      background: #df1581;
+      background: #373fb0;
     }
     &_delete {
-      background: #FF4500;
+      background: #ff4400;
     }
   }
 }
